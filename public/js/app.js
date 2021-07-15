@@ -18,7 +18,7 @@ weatherForm.addEventListener("submit", (e) => {
   icon.src = null;
   city.textContent = "Loading...";
   adress = document.getElementById("adress").value;
-  fetch("http://192.168.1.7:3000/weather?adress=" + adress).then((response) => {
+  fetch("/weather?adress=" + adress).then((response) => {
     response.json().then((data) => {
       city.textContent = "";
       if (data.error) {
